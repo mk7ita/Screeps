@@ -3,12 +3,13 @@ var roleEnergyCargo = {
     run: function(creep) {
 	    
         if(creep.carry.energy < creep.carryCapacity) {
-            var nearestSource = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+            /*var nearestSource = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return (structure.structureType == STRUCTURE_CONTAINER) &&
                         structure.store[RESOURCE_ENERGY] > 0;
                 }
-            });
+            });*/
+        
             if((nearestSource === undefined) || (nearestSource === null)) {
                 var source = creep.pos.findClosestByPath(FIND_SOURCES);
                 if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
